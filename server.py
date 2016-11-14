@@ -24,7 +24,9 @@ class EchoHandler(socketserver.DatagramRequestHandler):
             if not line:
                 break
             if lista[0] == "INVITE":
-                self.wfile.write(b"\r\n" + b"SIP/2.0 100 Trying" + b"\r\n" + b"SIP/2.0 180 Ring" + b"\r\n" + b"SIP/2.0 Ok" + b"\r\n")
+                self.wfile.write(b"\r\n" + b"SIP/2.0 100 Trying" + b"\r\n" + 
+                                 b"SIP/2.0 180 Ring" + b"\r\n" + b"SIP/2.0 Ok" +
+                                 b"\r\n")
             elif lista[0] == "BYE":
                 self.wfile.write(b" SIP/2.0 Ok" + b"\r\n")
             elif line[0] != "INVITE" or "ACK" or "BYE":
