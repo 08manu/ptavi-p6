@@ -29,7 +29,8 @@ try:
 
     print('Recibido -- ', data.decode('utf-8'))
     list_recib = data.decode('utf-8').split()
-    if list_recib[1] == "100" and list_recib[4] == "180" and list_recib[7] == "200":
+    if list_recib[1] == "100" and list_recib[4] == "180" and 
+       list_recib[7] == "200":
         metodo = "ACK"
         peticion = metodo + " sip:" + login + "@" + server + " SIP/2.0\r\n\r\n"
         print("Enviando", peticion)
