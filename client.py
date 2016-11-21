@@ -23,7 +23,7 @@ try:
     my_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     my_socket.connect((server, port))
 
-    print("Enviando:", peticion)  
+    print("Enviando:", peticion)
     my_socket.send(bytes(peticion, 'utf-8') + b'\r\n')
     data = my_socket.recv(1024)
 
@@ -41,4 +41,3 @@ try:
     print("Fin.")
 except:
     sys.exit("Usage: python client.py method receiver@IP:SIPport")
-        
