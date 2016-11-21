@@ -32,11 +32,11 @@ class EchoHandler(socketserver.DatagramRequestHandler):
                 print("Vamos a ejecutar", aEjecutar)
                 os.system(aEjecutar)
             elif metodo == "BYE":
-                self.wfile.write(b"\r\n" + b"SIP/2.0 200 OK" + b"\r\n")
+                self.wfile.write(b"SIP/2.0 200 OK" + b"\r\n")
             elif metodo != "INVITE" or "BYE":
-                self.wfile.write(b"\r\n" + b"SIP/2.0 405 Method Not Allowed")
+                self.wfile.write(b"SIP/2.0 405 Method Not Allowed" + b"\r\n")
             else:
-                self.wfile.write(b"\r\n" + b"SIP/2.0 400 Bad Request")
+                self.wfile.write(b"SIP/2.0 400 Bad Request" + b"\r\n")
 
 if __name__ == "__main__":
     # Creamos servidor de eco y escuchamos
